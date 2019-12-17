@@ -37,18 +37,6 @@
             var player = new Plyr('#player-@Model.MediaPlayerID', {
                 ratio: '16:9'
             });
-            @*var grid = document.querySelector('#@gridID');
-            var msnry;
-            imagesLoaded(grid, function () {
-                msnry = new Masonry(grid, {
-                    itemSelector: '.grid-item',
-                    columnWidth: @columnWidth,
-                    isFitWidth: true,
-                    horizontalOrder:  @Html.Raw(Model.HorizontalOrder),
-                    originLeft:  @Html.Raw(Model.RightToLeft),
-                    originTop: @Html.Raw(Model.BottomToTop),
-                });
-            });*@
         };
         if (
             document.readyState === "complete" ||
