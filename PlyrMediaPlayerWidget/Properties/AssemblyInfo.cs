@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using CMS;
@@ -6,12 +6,12 @@ using CMS;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AssemblyTitleHere")]
-[assembly: AssemblyDescription("AssemblyDescriptionHere")]
+[assembly: AssemblyTitle("PlyrMediaPlayerWidget")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("AssemblyCompanyHere")]
-[assembly: AssemblyProduct("AssemblyProductHere")]
-[assembly: AssemblyCopyright("AssemblyCopyrightHere")]
+[assembly: AssemblyCompany("Seventyeight Digital Inc.")]
+[assembly: AssemblyProduct("PlyrMediaPlayerWidget")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyDiscoverable]
@@ -22,7 +22,7 @@ using CMS;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("60d45549-bb62-4999-8f29-987b58b33127")]
+[assembly: Guid("8be1a519-0d88-4dc7-9152-aa51ebbf201c")]
 
 // Version information for an assembly consists of the following four values:
 //

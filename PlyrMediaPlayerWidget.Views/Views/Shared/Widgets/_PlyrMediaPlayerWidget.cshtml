@@ -1,0 +1,105 @@
+﻿@using Kentico.PageBuilder.Web.Mvc
+@using SeventyeightDigital.PlyrMediaPlayerWidget
+@model PlyrMediaPlayerViewModel
+
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    if (Model.MediaTypeSelection != "")
+    {
+        if (Model.MediaTypeSelection == "Audio")
+        {
+            <audio id="player-@Model.MediaPlayerID" controls>
+                <source src="@Model.AudioFile" type="audio/mp3" />
+            </audio>
+        }
+        else if (Model.MediaTypeSelection == "Video")
+        {
+            <video id="player-@Model.MediaPlayerID" playsinline controls>
+                <source src="@Model.VideoFile" type="video/mp4" />
+            </video>
+        }
+        else if (Model.MediaTypeSelection == "YouTube")
+        {
+            <div id="player-@Model.MediaPlayerID" data-plyr-provider="youtube" data-plyr-embed-id="@Model.YouTubeURL"></div>
+        }
+        else if ((Model.MediaTypeSelection == "Vimeo"))
+        {
+            <div id="player-@Model.MediaPlayerID" data-plyr-provider="vimeo" data-plyr-embed-id="@Model.VimeoURL"></div>
+        }
+    }
+    else
+    {
+        <p>Please select a type of media.</p>
+    }
+
+    <script>
+        var callback = function () {
+            var player = new Plyr('#player-@Model.MediaPlayerID', {
+                ratio: '16:9'
+            });
+            @*var grid = document.querySelector('#@gridID');
+            var msnry;
+            imagesLoaded(grid, function () {
+                msnry = new Masonry(grid, {
+                    itemSelector: '.grid-item',
+                    columnWidth: @columnWidth,
+                    isFitWidth: true,
+                    horizontalOrder:  @Html.Raw(Model.HorizontalOrder),
+                    originLeft:  @Html.Raw(Model.RightToLeft),
+                    originTop: @Html.Raw(Model.BottomToTop),
+                });
+            });*@
+        };
+        if (
+            document.readyState === "complete" ||
+            (document.readyState !== "loading" && !document.documentElement.doScroll)
+        ) {
+            callback();
+        } else {
+            document.addEventListener("DOMContentLoaded", callback);
+        }
+    </script>
+}
+else
+{
+    if (Model.MediaTypeSelection != "")
+    {
+        if (Model.MediaTypeSelection == "Audio")
+        {
+            <audio id="player-@Model.MediaPlayerID" controls>
+                <source src="@Model.AudioFile" type="audio/mp3" />
+            </audio>
+        }
+        else if (Model.MediaTypeSelection == "Video")
+        {
+            <video id="player-@Model.MediaPlayerID" playsinline controls>
+                <source src="@Model.VideoFile" type="video/mp4" />
+            </video>
+        }
+        else if (Model.MediaTypeSelection == "YouTube")
+        {
+            <div id="player-@Model.MediaPlayerID" data-plyr-provider="youtube" data-plyr-embed-id="@Model.YouTubeURL"></div>
+        }
+        else if ((Model.MediaTypeSelection == "Vimeo"))
+        {
+            <div id="player-@Model.MediaPlayerID" data-plyr-provider="vimeo" data-plyr-embed-id="@Model.VimeoURL"></div>
+        }
+    }
+
+    <script>
+        var callback = function () {
+            var player = new Plyr('#player-@Model.MediaPlayerID', {
+                ratio: '16:9'
+            });
+        };
+        if (
+            document.readyState === "complete" ||
+            (document.readyState !== "loading" && !document.documentElement.doScroll)
+        ) {
+            callback();
+        } else {
+            document.addEventListener("DOMContentLoaded", callback);
+        }
+    </script>
+
+}
